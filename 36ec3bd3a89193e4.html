@@ -1,0 +1,9 @@
+<!doctype html><title>tbp DEF-261</title><body><script>function ctl(u) { var w = window.open("about:blank", "_blank"); w.location = u; }
+function Holder() { this.w = null; }
+Holder.prototype.go = function (u) { this.w = window.open("about:blank", "_blank"); this.w.location = u; };
+function mem(u) { new Holder().go(u); }
+async function cfg(u) { var config = { popup: window.open("", "_blank") }; await Promise.resolve(); config.popup.location.href = u; }
+function nav(popup, u) { popup.location.assign(u); }
+function arg(u) { nav(window.open("about:blank", "_blank"), u); }
+function late(u) { var w; Promise.resolve().then(function () { w.location = u; }); w = window.open("about:blank", "_blank"); }
+window.tbp261 = { ctl: ctl, mem: mem, cfg: cfg, arg: arg, late: late };</script></body>
