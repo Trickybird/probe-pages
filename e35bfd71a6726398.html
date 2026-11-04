@@ -1,0 +1,9 @@
+<!doctype html><title>tbp DEF-383</title><body><script>function loc(f, u) { f.contentWindow.location = u; }
+function href(f, u) { f.contentWindow.location.href = u; }
+function named(name, u) { window.open(u, name); }
+function popup(u) { window.open(u, "_blank"); }
+function link(name, u) { var a = document.createElement("a"); a.href = u; a.target = name; document.body.appendChild(a); a.click(); }
+function blank(u) { var a = document.createElement("a"); a.href = u; a.target = "_blank"; document.body.appendChild(a); a.click(); }
+function detached(name, u) { var a = document.createElement("a"); a.href = u; a.target = name; a.click(); }
+function refresh(f, u) { var m = f.contentDocument.createElement("meta"); m.httpEquiv = "refresh"; m.content = "0;url=" + u; f.contentDocument.head.appendChild(m); }
+window.tbp383 = { loc: loc, href: href, named: named, popup: popup, link: link, blank: blank, detached: detached, refresh: refresh };</script></body>
